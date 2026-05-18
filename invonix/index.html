@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy Policy for Invonix — invoice, quotation, and business management app.">
+    <meta name="description" content="Privacy Policy for Invonix — invoice, quotation, expense and cloud-backup app for Android.">
     <meta name="robots" content="index, follow">
     <title>Privacy Policy · Invonix</title>
-    <link rel="canonical" href="#">
+    <link rel="canonical" href="https://invonix.app/legal/privacy-policy">
     <style>
         :root {
             --bg: #0b1020;
@@ -17,6 +16,7 @@
             --muted: #4b5363;
             --border: #e3e8f0;
             --accent: #2b5fff;
+            --danger: #b91c1c;
             --max: 760px;
         }
         * { box-sizing: border-box; }
@@ -51,6 +51,17 @@
             color: var(--muted);
             font-size: 14px;
         }
+        header nav {
+            margin-top: 18px;
+            font-size: 13px;
+        }
+        header nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+            border-bottom: 1px dashed transparent;
+        }
+        header nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
         main {
             max-width: var(--max);
             margin: 0 auto;
@@ -68,17 +79,24 @@
             color: var(--text);
         }
         p, li { color: var(--text); }
-        ul {
+        ul, ol {
             padding-left: 22px;
             margin: 8px 0 16px;
         }
-        ul li { margin-bottom: 6px; }
+        ul li, ol li { margin-bottom: 6px; }
         a {
             color: var(--accent);
             text-decoration: none;
             border-bottom: 1px solid rgba(43, 95, 255, 0.25);
         }
         a:hover { border-bottom-color: var(--accent); }
+        code {
+            background: var(--surface-2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        }
         .callout {
             background: var(--surface-2);
             border: 1px solid var(--border);
@@ -87,6 +105,7 @@
             margin: 16px 0;
         }
         .callout strong { color: var(--text); }
+        .table-wrap { overflow-x: auto; }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -114,6 +133,8 @@
             color: var(--muted);
             font-size: 14px;
         }
+        footer nav { margin-top: 6px; }
+        footer nav a { color: var(--muted); margin: 0 8px; }
         @media (max-width: 480px) {
             header { padding: 36px 20px 24px; }
             header h1 { font-size: 28px; }
@@ -123,211 +144,336 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="brand">Invonix</div>
-        <h1>Privacy Policy</h1>
-        <div class="updated">Last updated: 13 May 2026</div>
-    </header>
+<header>
+    <div class="brand">Invonix</div>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: 19 May 2026</div>
+    <nav>
+        <a href="terms-and-conditions.html">Terms</a> ·
+        <a href="data-deletion.html">Data Deletion</a> ·
+        <a href="refund-subscription.html">Refund &amp; Subscription</a> ·
+        <a href="backup-cloud-disclaimer.html">Backup Disclaimer</a> ·
+        <a href="data-safety.html">Data Safety</a>
+    </nav>
+</header>
 
-    <main>
-        <section>
-            <p>
-                Invonix ("we", "us", "our") provides an Android application for creating invoices,
-                quotations, customer records, expenses, signatures and related business documents
-                (the "App"). This Privacy Policy explains what data the App handles, how it handles
-                it, and the choices you have. We've written it in plain language and kept it short.
-            </p>
-            <div class="callout">
-                <strong>Summary.</strong> Your business records (invoices, customers, signatures,
-                etc.) live on your device. We do not collect or transmit them to our servers.
-                Google Play, AdMob, and Google Play Billing receive their own limited data when you
-                use those features — see Section 4.
-            </div>
-        </section>
+<main>
+    <section>
+        <div class="callout">
+            <strong>In one paragraph.</strong> Invonix is an offline-first invoice maker. Everything
+            you create — invoices, customers, quotations, expenses, signatures — lives on your
+            device. Nothing leaves the device unless you choose to: by signing in to Google for
+            cloud backup, by exporting a PDF, or by upgrading to Premium through Google Play. The
+            only data that ever leaves your phone automatically is an anonymous crash report when
+            the app crashes (via Google Firebase Crashlytics), and the standard ad-request data
+            when a free user is shown an ad (via Google AdMob).
+        </div>
+    </section>
 
-        <section>
-            <h2>1. Who we are</h2>
-            <p>
-                The App is published by the Invonix team. If you need to contact us for any
-                privacy-related question, see Section 11 (Contact).
-            </p>
-        </section>
+    <section>
+        <h2>1. Who we are</h2>
+        <p>
+            Invonix ("we", "us", "our") is the publisher of the Invonix Android application
+            (package <code>com.srtech.invonix</code>), available on Google Play. For privacy
+            questions, deletion requests, or complaints, write to
+            <a href="mailto:srtech.app20@gmail.com">srtech.app20@gmail.com</a>.
+        </p>
+    </section>
 
-        <section>
-            <h2>2. Data the App processes</h2>
-            <p>
-                The App processes the data you enter into it: business profile (name, phone, email,
-                address, GSTIN), customers, invoices and quotation items, expenses, drawn or
-                imported signatures, and template preferences.
-            </p>
+    <section>
+        <h2>2. What information Invonix processes</h2>
+
+        <h3>2.1 Data you enter into the app (stays on your device)</h3>
+        <p>
+            These records are stored locally in a Room database on your device and never sent to
+            any server controlled by us. They include:
+        </p>
+        <ul>
+            <li><strong>Business profile</strong> — name, phone, email, address, GST number, logo,
+                signature image.</li>
+            <li><strong>Customers</strong> — name, phone, email, address, GSTIN.</li>
+            <li><strong>Invoices</strong> — number, line items, prices, taxes, discounts, status,
+                due date, notes, optional per-invoice signature.</li>
+            <li><strong>Quotations</strong> — number, line items, prices, notes, conversion
+                status.</li>
+            <li><strong>Expenses</strong> — title, category, amount, date, notes.</li>
+            <li><strong>Signatures</strong> — drawn or imported signature images.</li>
+            <li><strong>App settings</strong> — selected template, accent colour, font, currency,
+                dark-mode preference, recent/favourite templates, custom PDF branding line
+                (Premium).</li>
+            <li><strong>AI history</strong> — prompts you typed into the AI Assistant and the
+                generated text the app showed you. Stored locally only.</li>
+        </ul>
+
+        <h3>2.2 Account data (only when you sign in for cloud backup)</h3>
+        <p>
+            Cloud backup is optional. If — and only if — you tap <strong>Connect to Google
+            Drive</strong> in the Backup &amp; Sync screen, the app uses Google's Credential
+            Manager and Identity Services to:
+        </p>
+        <ul>
+            <li>Identify you by your Google account email and (where Google provides it) display
+                name and profile photo URL.</li>
+            <li>Request the <code>drive.appdata</code> scope, which lets the app read and write
+                <strong>only</strong> the app's own hidden folder inside your Google Drive.
+                Invonix cannot see, read, or modify any of your other Drive files.</li>
+        </ul>
+        <p>
+            This account information is held only on your device. We do not transmit it to any
+            server we control.
+        </p>
+
+        <h3>2.3 Data uploaded to Google Drive (when you enable cloud backup)</h3>
+        <p>
+            If cloud backup is enabled, the app builds a single ZIP archive of your local database
+            and app preferences and uploads it to your Google Drive <em>AppDataFolder</em>. The
+            ZIP contains everything in section 2.1 above. It is stored inside your own Google
+            Drive — Invonix never receives a copy. Only the Invonix app on a device signed in to
+            the same Google account can read this file. You can delete it any time from
+            <a href="https://drive.google.com/drive/u/0/settings/storage">Drive Settings →
+                Manage Apps</a> → Invonix → Delete hidden app data.
+        </p>
+        <p>
+            The auto-backup feature runs in the background through Android WorkManager. It is
+            gated on (a) an active Premium subscription, (b) the Auto-backup toggle being on,
+            (c) Google Drive being authorised, and (d) network + battery + storage constraints
+            being satisfied. When any of those is false the worker silently skips.
+        </p>
+
+        <h3>2.4 Data sent to third-party services</h3>
+        <p>
+            Invonix uses the following Google-owned services, and only these:
+        </p>
+        <div class="table-wrap">
             <table>
                 <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Stored where</th>
-                        <th>Shared</th>
-                    </tr>
+                <tr>
+                    <th>Service</th>
+                    <th>What it receives</th>
+                    <th>When</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Invoices, customers, expenses, business profile, signatures</td>
-                        <td>On-device Room (SQLite) database, plus exported files in
-                            <code>Downloads/InvonixAI/</code></td>
-                        <td>Only when you explicitly share, export, or back up a file</td>
-                    </tr>
-                    <tr>
-                        <td>App preferences (theme, currency, defaults)</td>
-                        <td>On-device DataStore</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Subscription status</td>
-                        <td>Google Play Billing &amp; on-device cache</td>
-                        <td>With Google Play (required to verify entitlement)</td>
-                    </tr>
-                    <tr>
-                        <td>Crash diagnostics</td>
-                        <td>None collected by default</td>
-                        <td>No</td>
-                    </tr>
+                <tr>
+                    <td>Google Play Billing</td>
+                    <td>Subscription purchase tokens, product IDs, your Play account identifier</td>
+                    <td>Only when you subscribe / restore / cancel</td>
+                </tr>
+                <tr>
+                    <td>Google AdMob</td>
+                    <td>Standard ad-request information (device advertising ID, coarse device data,
+                        app info) and limited interaction events</td>
+                    <td>Free-tier users only, while ads are shown</td>
+                </tr>
+                <tr>
+                    <td>Firebase Crashlytics</td>
+                    <td>Crash stack traces, app version, OS version, device model, anonymous
+                        installation ID</td>
+                    <td>Only when the app crashes</td>
+                </tr>
+                <tr>
+                    <td>Google Drive</td>
+                    <td>The cloud backup ZIP and its metadata</td>
+                    <td>Only when you enable cloud backup</td>
+                </tr>
+                <tr>
+                    <td>Google Sign-In / Credential Manager</td>
+                    <td>Your Google account ID token</td>
+                    <td>Only when you tap Connect to Google Drive</td>
+                </tr>
                 </tbody>
             </table>
-        </section>
+        </div>
+        <p>
+            We <strong>do not</strong> integrate any of the following: advertising networks other
+            than AdMob; third-party analytics SDKs; behavioural-profiling vendors; AI / LLM APIs;
+            CRM tools; email marketing platforms.
+        </p>
+        <div class="callout">
+            <strong>About the AI Assistant.</strong> In this release the AI Assistant produces
+            text <em>locally</em> from a fixed library of templates. No prompt or generated text
+            is sent to any external AI service. If a future release introduces a real AI provider,
+            this Privacy Policy will be updated and you will be told the first time you open the
+            feature.
+        </div>
+    </section>
 
-        <section>
-            <h2>3. How we use it</h2>
-            <ul>
-                <li>To render and export the invoices, quotations, and PDFs you create.</li>
-                <li>To save your business profile so it appears on every document.</li>
-                <li>To verify your Invonix Premium subscription via Google Play Billing.</li>
-                <li>To serve ads to non-premium users via Google AdMob.</li>
-            </ul>
-            <p>
-                We do not sell, rent, or share your personal data with third parties for marketing.
-            </p>
-        </section>
+    <section>
+        <h2>3. Permissions Invonix requests</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>Permission</th>
+                    <th>Required?</th>
+                    <th>Why</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td>
+                    <td>Always</td>
+                    <td>Play billing, cloud backup, ads, crash reports</td>
+                </tr>
+                <tr>
+                    <td><code>com.android.vending.BILLING</code></td>
+                    <td>Always</td>
+                    <td>In-app subscriptions</td>
+                </tr>
+                <tr>
+                    <td><code>WRITE/READ_EXTERNAL_STORAGE</code> (Android 9 and below only)</td>
+                    <td>Optional</td>
+                    <td>Saving exported PDFs into the public <code>Downloads/Invonix/</code>
+                        folder. Android 10+ uses scoped storage and asks for nothing.</td>
+                </tr>
+                <tr>
+                    <td>Camera (system-managed)</td>
+                    <td>Optional</td>
+                    <td>Only when you tap "Take a photo" while creating a signature. The OS handles
+                        the capture; the app never accesses the camera directly.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            Invonix does <strong>not</strong> request: contacts, location, microphone, phone state,
+            calendar, SMS, body sensors, accounts list, manage external storage, biometrics, USB,
+            or any background-location permission.
+        </p>
+    </section>
 
-        <section>
-            <h2>4. Third-party services</h2>
+    <section>
+        <h2>4. How we use your information</h2>
+        <ul>
+            <li>To run the app. Almost all processing happens on your device with no network
+                involved.</li>
+            <li>To back up your data, when you ask us to, into your own Google Drive
+                AppDataFolder.</li>
+            <li>To process subscriptions through Google Play Billing.</li>
+            <li>To show ads to free users through Google AdMob.</li>
+            <li>To improve stability by receiving anonymous crash reports through Firebase
+                Crashlytics.</li>
+        </ul>
+        <p>
+            We do not use your data for advertising profiling, for sale to data brokers, for
+            credit scoring, or for any purpose other than running the features you see in the app.
+        </p>
+    </section>
 
-            <h3>Google AdMob</h3>
-            <p>
-                Non-premium users see ads served by Google AdMob. AdMob collects the standard
-                identifiers needed to deliver and measure ads, including the Android Advertising ID,
-                approximate location derived from IP, device type and OS version. Personalised ads
-                may be shown where consent permits; otherwise non-personalised ads are served. See
-                Google's
-                <a href="https://policies.google.com/technologies/ads">Ads &amp; Privacy</a> for
-                detail. You can reset or opt out of personalised ads from your device settings.
-            </p>
+    <section>
+        <h2>5. Legal basis (EEA / UK / GDPR regions)</h2>
+        <ul>
+            <li><strong>Performance of contract</strong> — to provide the invoice-maker
+                functionality.</li>
+            <li><strong>Consent</strong> — for cloud backup, ads personalisation, and any
+                non-essential processing. You can withdraw consent at any time (disconnect Drive,
+                upgrade to Premium to remove ads, or uninstall).</li>
+            <li><strong>Legitimate interest</strong> — to keep the app stable through anonymous
+                crash reports.</li>
+        </ul>
+    </section>
 
-            <h3>Google Play Billing</h3>
-            <p>
-                Subscription purchases (Invonix Premium) are processed by Google Play. We do not
-                see, store, or process your card details. Google's
-                <a href="https://policies.google.com/privacy">privacy policy</a> applies to the
-                billing flow.
-            </p>
+    <section>
+        <h2>6. International transfers</h2>
+        <p>
+            Google's services (Drive, Play Billing, Firebase, AdMob) operate globally. Data routed
+            through them may be stored or processed on Google's servers outside your country.
+            Google publishes the relevant safeguards at
+            <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.
+        </p>
+    </section>
 
-            <h3>Google Play Services</h3>
-            <p>
-                The App relies on Google Play Services for ads, billing, and Google sign-in (when
-                you choose Google as your sign-in option for backup features). Google's privacy
-                policy applies.
-            </p>
-        </section>
+    <section>
+        <h2>7. Data retention</h2>
+        <ul>
+            <li><strong>On-device data</strong> stays until you delete it or uninstall the app.</li>
+            <li><strong>Cloud backup ZIP</strong> stays in your Google Drive AppDataFolder until
+                you sign out, delete it, or revoke Invonix's Drive permission at
+                <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+            <li><strong>Crashlytics reports</strong> are retained by Google for up to 90 days by
+                default.</li>
+            <li><strong>AdMob data</strong> retention follows Google's terms.</li>
+        </ul>
+    </section>
 
-        <section>
-            <h2>5. Permissions the App requests</h2>
-            <p>
-                The App requests only the permissions it needs. Where Android offers a runtime
-                prompt, you can decline — the affected feature will be gracefully disabled.
-            </p>
-            <ul>
-                <li><strong>Internet &amp; Network state:</strong> required to load ads, contact
-                    Google Play Billing, and (optionally) reach the AI assistant features.</li>
-                <li><strong>Billing:</strong> required to manage Invonix Premium subscriptions.</li>
-                <li><strong>Storage (Android 9 and below only):</strong> required to write export
-                    files. On Android 10+ we use the scoped MediaStore API and need no storage
-                    permission.</li>
-                <li><strong>Camera (optional):</strong> only requested if you tap "Take a photo" in
-                    the Signature screen. Photos are processed on-device.</li>
-            </ul>
-        </section>
+    <section>
+        <h2>8. Your rights</h2>
+        <p>You can, at any time:</p>
+        <ul>
+            <li><strong>Access</strong> every piece of data Invonix has about you — it is all
+                visible inside the app and inside your own Google Drive AppDataFolder.</li>
+            <li><strong>Export</strong> your data — Settings → Backup &amp; Restore →
+                <em>Local Export</em> writes a ZIP to <code>Downloads/Invonix/</code>.</li>
+            <li><strong>Delete</strong> your data — see the
+                <a href="data-deletion.html">Data Deletion Policy</a>.</li>
+            <li><strong>Disconnect Drive</strong> at Settings → Backup &amp; Sync →
+                <em>Disconnect</em>. Your existing Drive backup is not deleted by this — you
+                control it.</li>
+            <li><strong>Withdraw consent</strong> for ads by upgrading to Premium, or for crash
+                reports by uninstalling.</li>
+            <li><strong>Lodge a complaint</strong> with your local data protection authority.</li>
+        </ul>
+        <p>
+            To exercise any of these rights, write to
+            <a href="mailto:srtech.app20@gmail.com">srtech.app20@gmail.com</a>. We respond within 30
+            days.
+        </p>
+    </section>
 
-        <section>
-            <h2>6. How long we keep your data</h2>
-            <p>
-                On-device data is retained until you delete it from within the App or uninstall the
-                App. Uninstalling removes the local database and all exported files we created in
-                app-private directories. Files you saved into <code>Downloads/InvonixAI/</code> stay
-                in your device's Downloads folder — they're yours; we don't manage them after
-                they're written.
-            </p>
-        </section>
+    <section>
+        <h2>9. Children's privacy</h2>
+        <p>
+            Invonix is intended for users <strong>13 years of age and older</strong> (or the
+            relevant minimum age in your country). We do not knowingly collect information from
+            children. If you believe a child has used the app, contact us and we will remove any
+            account-linked data.
+        </p>
+    </section>
 
-        <section>
-            <h2>7. Your rights</h2>
-            <p>
-                Because your business data stays on your device, you exercise the standard data
-                rights directly:
-            </p>
-            <ul>
-                <li><strong>Access &amp; portability:</strong> use Backup &amp; Restore to export a
-                    JSON snapshot of your data at any time.</li>
-                <li><strong>Correction:</strong> edit any record from inside the App.</li>
-                <li><strong>Deletion:</strong> delete records inside the App, or uninstall the App
-                    to remove the entire local database.</li>
-            </ul>
-            <p>
-                If you are in the EEA/UK and believe your rights have been violated, you may also
-                lodge a complaint with your local data protection authority.
-            </p>
-        </section>
+    <section>
+        <h2>10. Security</h2>
+        <ul>
+            <li>All network traffic to Google services uses TLS (HTTPS). Clear-text traffic is
+                disabled by the app's network security configuration.</li>
+            <li>Drive access tokens live only in memory; they are never written to disk.</li>
+            <li>The backup ZIP itself is not encrypted by Invonix — it relies on Google Drive's
+                at-rest encryption. A future release may add client-side encryption with a
+                user-controlled key; until then, treat your Google account credentials as the
+                protection boundary.</li>
+        </ul>
+    </section>
 
-        <section>
-            <h2>8. Children</h2>
-            <p>
-                The App is a business tool and is not intended for children under 13. We do not
-                knowingly collect data from children.
-            </p>
-        </section>
+    <section>
+        <h2>11. Changes to this policy</h2>
+        <p>
+            When we make material changes we update the date at the top and, where appropriate,
+            surface a notice inside the app on next launch. The latest version is always at
+            <a href="https://invonix.app/legal/privacy-policy">invonix.app/legal/privacy-policy</a>.
+        </p>
+    </section>
 
-        <section>
-            <h2>9. Security</h2>
-            <p>
-                Your business data is stored on your device using Android's standard application
-                storage. We recommend keeping your device's OS up to date and using a screen lock.
-                Backup files you generate are unencrypted JSON — handle them like you would any
-                other business document.
-            </p>
-        </section>
+    <section>
+        <h2>12. Contact</h2>
+        <p>
+            <a href="mailto:srtech.app20@gmail.com">srtech.app20@gmail.com</a> — privacy questions,
+            deletion requests, complaints.
+        </p>
+    </section>
+</main>
 
-        <section>
-            <h2>10. Changes to this policy</h2>
-            <p>
-                We may update this Privacy Policy as the App evolves. The "Last updated" date at the
-                top of this page reflects the most recent revision. Material changes will be
-                surfaced inside the App.
-            </p>
-        </section>
+<footer>
+    &copy; <span id="year">2026</span> Invonix · All rights reserved.
+    <nav>
+        <a href="terms-and-conditions.html">Terms</a> ·
+        <a href="data-deletion.html">Data Deletion</a> ·
+        <a href="refund-subscription.html">Refund &amp; Subscription</a> ·
+        <a href="backup-cloud-disclaimer.html">Backup Disclaimer</a> ·
+        <a href="data-safety.html">Data Safety</a>
+    </nav>
+</footer>
 
-        <section>
-            <h2>11. Contact</h2>
-            <p>
-                Questions or requests related to this policy can be sent to
-                <a href="mailto:privacy@Invonix.ai">privacy@Invonix.ai</a>. We aim to respond within
-                14 days.
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        &copy; <span id="year">2026</span> Invonix · All rights reserved.
-    </footer>
-
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
