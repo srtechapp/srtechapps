@@ -1,1 +1,333 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Invonix — invoice, quotation, and business management app.">
+    <meta name="robots" content="index, follow">
+    <title>Privacy Policy · Invonix</title>
+    <link rel="canonical" href="#">
+    <style>
+        :root {
+            --bg: #0b1020;
+            --surface: #ffffff;
+            --surface-2: #f5f7fb;
+            --text: #11141f;
+            --muted: #4b5363;
+            --border: #e3e8f0;
+            --accent: #2b5fff;
+            --max: 760px;
+        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+                Arial, sans-serif;
+            color: var(--text);
+            background: linear-gradient(180deg, #f8faff 0%, #ffffff 320px);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+        }
+        header {
+            padding: 56px 24px 32px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        header .brand {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+        header h1 {
+            margin: 12px 0 4px;
+            font-size: 36px;
+            line-height: 1.15;
+        }
+        header .updated {
+            color: var(--muted);
+            font-size: 14px;
+        }
+        main {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 32px 24px 64px;
+        }
+        section { margin-bottom: 28px; }
+        h2 {
+            font-size: 22px;
+            margin: 32px 0 10px;
+            line-height: 1.3;
+        }
+        h3 {
+            font-size: 17px;
+            margin: 18px 0 6px;
+            color: var(--text);
+        }
+        p, li { color: var(--text); }
+        ul {
+            padding-left: 22px;
+            margin: 8px 0 16px;
+        }
+        ul li { margin-bottom: 6px; }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(43, 95, 255, 0.25);
+        }
+        a:hover { border-bottom-color: var(--accent); }
+        .callout {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin: 16px 0;
+        }
+        .callout strong { color: var(--text); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 18px;
+            font-size: 15px;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        th {
+            background: var(--surface-2);
+            font-weight: 600;
+            color: var(--muted);
+            font-size: 13px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 24px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        @media (max-width: 480px) {
+            header { padding: 36px 20px 24px; }
+            header h1 { font-size: 28px; }
+            main { padding: 20px 18px 48px; }
+            h2 { font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">Invonix</div>
+        <h1>Privacy Policy</h1>
+        <div class="updated">Last updated: 13 May 2026</div>
+    </header>
+
+    <main>
+        <section>
+            <p>
+                Invonix ("we", "us", "our") provides an Android application for creating invoices,
+                quotations, customer records, expenses, signatures and related business documents
+                (the "App"). This Privacy Policy explains what data the App handles, how it handles
+                it, and the choices you have. We've written it in plain language and kept it short.
+            </p>
+            <div class="callout">
+                <strong>Summary.</strong> Your business records (invoices, customers, signatures,
+                etc.) live on your device. We do not collect or transmit them to our servers.
+                Google Play, AdMob, and Google Play Billing receive their own limited data when you
+                use those features — see Section 4.
+            </div>
+        </section>
+
+        <section>
+            <h2>1. Who we are</h2>
+            <p>
+                The App is published by the Invonix team. If you need to contact us for any
+                privacy-related question, see Section 11 (Contact).
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Data the App processes</h2>
+            <p>
+                The App processes the data you enter into it: business profile (name, phone, email,
+                address, GSTIN), customers, invoices and quotation items, expenses, drawn or
+                imported signatures, and template preferences.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Stored where</th>
+                        <th>Shared</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Invoices, customers, expenses, business profile, signatures</td>
+                        <td>On-device Room (SQLite) database, plus exported files in
+                            <code>Downloads/InvonixAI/</code></td>
+                        <td>Only when you explicitly share, export, or back up a file</td>
+                    </tr>
+                    <tr>
+                        <td>App preferences (theme, currency, defaults)</td>
+                        <td>On-device DataStore</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Subscription status</td>
+                        <td>Google Play Billing &amp; on-device cache</td>
+                        <td>With Google Play (required to verify entitlement)</td>
+                    </tr>
+                    <tr>
+                        <td>Crash diagnostics</td>
+                        <td>None collected by default</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>3. How we use it</h2>
+            <ul>
+                <li>To render and export the invoices, quotations, and PDFs you create.</li>
+                <li>To save your business profile so it appears on every document.</li>
+                <li>To verify your Invonix Premium subscription via Google Play Billing.</li>
+                <li>To serve ads to non-premium users via Google AdMob.</li>
+            </ul>
+            <p>
+                We do not sell, rent, or share your personal data with third parties for marketing.
+            </p>
+        </section>
+
+        <section>
+            <h2>4. Third-party services</h2>
+
+            <h3>Google AdMob</h3>
+            <p>
+                Non-premium users see ads served by Google AdMob. AdMob collects the standard
+                identifiers needed to deliver and measure ads, including the Android Advertising ID,
+                approximate location derived from IP, device type and OS version. Personalised ads
+                may be shown where consent permits; otherwise non-personalised ads are served. See
+                Google's
+                <a href="https://policies.google.com/technologies/ads">Ads &amp; Privacy</a> for
+                detail. You can reset or opt out of personalised ads from your device settings.
+            </p>
+
+            <h3>Google Play Billing</h3>
+            <p>
+                Subscription purchases (Invonix Premium) are processed by Google Play. We do not
+                see, store, or process your card details. Google's
+                <a href="https://policies.google.com/privacy">privacy policy</a> applies to the
+                billing flow.
+            </p>
+
+            <h3>Google Play Services</h3>
+            <p>
+                The App relies on Google Play Services for ads, billing, and Google sign-in (when
+                you choose Google as your sign-in option for backup features). Google's privacy
+                policy applies.
+            </p>
+        </section>
+
+        <section>
+            <h2>5. Permissions the App requests</h2>
+            <p>
+                The App requests only the permissions it needs. Where Android offers a runtime
+                prompt, you can decline — the affected feature will be gracefully disabled.
+            </p>
+            <ul>
+                <li><strong>Internet &amp; Network state:</strong> required to load ads, contact
+                    Google Play Billing, and (optionally) reach the AI assistant features.</li>
+                <li><strong>Billing:</strong> required to manage Invonix Premium subscriptions.</li>
+                <li><strong>Storage (Android 9 and below only):</strong> required to write export
+                    files. On Android 10+ we use the scoped MediaStore API and need no storage
+                    permission.</li>
+                <li><strong>Camera (optional):</strong> only requested if you tap "Take a photo" in
+                    the Signature screen. Photos are processed on-device.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. How long we keep your data</h2>
+            <p>
+                On-device data is retained until you delete it from within the App or uninstall the
+                App. Uninstalling removes the local database and all exported files we created in
+                app-private directories. Files you saved into <code>Downloads/InvonixAI/</code> stay
+                in your device's Downloads folder — they're yours; we don't manage them after
+                they're written.
+            </p>
+        </section>
+
+        <section>
+            <h2>7. Your rights</h2>
+            <p>
+                Because your business data stays on your device, you exercise the standard data
+                rights directly:
+            </p>
+            <ul>
+                <li><strong>Access &amp; portability:</strong> use Backup &amp; Restore to export a
+                    JSON snapshot of your data at any time.</li>
+                <li><strong>Correction:</strong> edit any record from inside the App.</li>
+                <li><strong>Deletion:</strong> delete records inside the App, or uninstall the App
+                    to remove the entire local database.</li>
+            </ul>
+            <p>
+                If you are in the EEA/UK and believe your rights have been violated, you may also
+                lodge a complaint with your local data protection authority.
+            </p>
+        </section>
+
+        <section>
+            <h2>8. Children</h2>
+            <p>
+                The App is a business tool and is not intended for children under 13. We do not
+                knowingly collect data from children.
+            </p>
+        </section>
+
+        <section>
+            <h2>9. Security</h2>
+            <p>
+                Your business data is stored on your device using Android's standard application
+                storage. We recommend keeping your device's OS up to date and using a screen lock.
+                Backup files you generate are unencrypted JSON — handle them like you would any
+                other business document.
+            </p>
+        </section>
+
+        <section>
+            <h2>10. Changes to this policy</h2>
+            <p>
+                We may update this Privacy Policy as the App evolves. The "Last updated" date at the
+                top of this page reflects the most recent revision. Material changes will be
+                surfaced inside the App.
+            </p>
+        </section>
+
+        <section>
+            <h2>11. Contact</h2>
+            <p>
+                Questions or requests related to this policy can be sent to
+                <a href="mailto:privacy@Invonix.ai">privacy@Invonix.ai</a>. We aim to respond within
+                14 days.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; <span id="year">2026</span> Invonix · All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
