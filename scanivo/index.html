@@ -33,13 +33,13 @@
 
 <header>
   <h1>Privacy Policy — Scanivo</h1>
-  <p class="updated"><strong>Last updated:</strong> May 9, 2026 · <strong>Effective date:</strong> May 9, 2026</p>
+  <p class="updated"><strong>Last updated:</strong> June 7, 2026 · <strong>Effective date:</strong> June 7, 2026</p>
 </header>
 
 <p>This Privacy Policy explains how <strong>Scanivo</strong> (the "App", "we", "us", "our") handles information when you install or use our Android application available on Google Play (package name <code>com.srtech.scanivo</code>). By installing or using Scanivo, you agree to the practices described in this policy.</p>
 
 <div class="callout">
-  <strong>Summary in plain English:</strong> Scanivo runs entirely on your device. We do not have user accounts, we do not run servers that store your scans, and we never upload the documents you scan. The only data that leaves your device is anonymous information used by Google to serve in-app ads (advertising ID + standard device/network signals).
+  <strong>Summary in plain English:</strong> Scanivo runs entirely on your device. We do not have user accounts, we do not run servers that store your scans, and we never upload the documents you scan. The only data that leaves your device is (a) anonymous information used by Google to serve in-app ads to non-premium users (advertising ID + standard device/network signals), and (b) the purchase tokens Google Play Billing sends when you subscribe to Premium or restore a previous purchase.
 </div>
 
 <div class="toc">
@@ -49,6 +49,7 @@
     <li><a href="#how-used">How we use information</a></li>
     <li><a href="#permissions">Permissions we request</a></li>
     <li><a href="#third-parties">Third-party services</a></li>
+    <li><a href="#subscriptions">Subscriptions &amp; in-app purchases</a></li>
     <li><a href="#sharing">Data sharing &amp; disclosure</a></li>
     <li><a href="#retention">Data retention</a></li>
     <li><a href="#security">Security</a></li>
@@ -165,34 +166,71 @@
       <td>Open source (Apache 2.0)</td>
     </tr>
     <tr>
-      <td>Google Play Services (advertising components)</td>
-      <td>Required by AdMob.</td>
-      <td>See AdMob row above.</td>
+      <td>Google Play Billing</td>
+      <td>Process Monthly / Yearly subscriptions and Lifetime in-app purchases. Restore purchases across devices.</td>
+      <td>Purchase token, product ID, and Google-account-level entitlement state.</td>
+      <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+    </tr>
+    <tr>
+      <td>Google ML Kit Document Scanner</td>
+      <td>Auto edge detection, perspective correction, and multi-page batching for the main document scan flow. Runs on your device after the model is fetched from Play Services.</td>
+      <td>None after initial model download.</td>
+      <td><a href="https://developers.google.com/ml-kit/terms" target="_blank" rel="noopener">ML Kit Terms</a></td>
+    </tr>
+    <tr>
+      <td>OpenCV</td>
+      <td>ID Card edge detection (Canny + contour analysis) and perspective correction (<code>warpPerspective</code>). Native code that runs entirely on your device.</td>
+      <td>None.</td>
+      <td><a href="https://opencv.org/license/" target="_blank" rel="noopener">Apache 2.0</a></td>
+    </tr>
+    <tr>
+      <td>Firebase Analytics</td>
+      <td>Anonymous event counts so we know which features are used most. No personally identifiable information attached.</td>
+      <td>Anonymous app/install events.</td>
+      <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
+    </tr>
+    <tr>
+      <td>Google Play Services (advertising + billing + ML Kit components)</td>
+      <td>Required by AdMob, Play Billing, and the ML Kit Document Scanner.</td>
+      <td>See the relevant rows above.</td>
       <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></td>
     </tr>
   </tbody>
 </table>
 
-<h2 id="sharing">5. Data sharing &amp; disclosure</h2>
+<h2 id="subscriptions">5. Subscriptions &amp; in-app purchases</h2>
+<p>Scanivo offers optional paid plans to remove advertising and unlock premium features:</p>
+<ul>
+  <li><strong>Monthly Premium</strong> — auto-renewing monthly subscription.</li>
+  <li><strong>Yearly Premium</strong> — auto-renewing annual subscription.</li>
+  <li><strong>Lifetime Premium</strong> — a single one-time purchase that grants premium access for as long as you own the Google account.</li>
+</ul>
+<p>All payments are processed by <strong>Google Play Billing</strong>. We never see your payment card details. We receive only a purchase token, the product ID, and your Google-account-level entitlement state — enough to know whether to enable premium features and hide advertising on your device.</p>
+<p>Premium entitlement is restored automatically when you sign into the same Google account on a new device, after a reinstall, or after clearing app data. You can also tap <em>Restore Purchases</em> in <em>Profile</em> or the Premium screen to trigger the check manually.</p>
+<p>Cancellation, refund, and subscription management are handled entirely by Google Play. The Manage Subscription button in the App opens the standard Google Play subscription page for your account.</p>
+
+<h2 id="sharing">6. Data sharing &amp; disclosure</h2>
 <p>We do not sell, rent, or share your personal information with third parties for their own marketing purposes. We may disclose information only when required by law, valid legal process, or to protect the safety, rights, or property of users or the public.</p>
 <p>Because Scanivo does not collect documents or personal account data, there is generally nothing for us to disclose in response to such requests.</p>
 
-<h2 id="retention">6. Data retention</h2>
+<h2 id="retention">7. Data retention</h2>
 <ul>
-  <li><strong>Documents, PDFs, signatures, and OCR text</strong> remain on your device until you delete them in the App or uninstall the App. Uninstalling Scanivo removes everything stored in app-private storage.</li>
-  <li><strong>Files you exported</strong> to public folders (e.g. <em>Pictures/Scanivo</em> or <em>Downloads/Scanivo</em>) remain on your device until you delete them with a file manager — uninstalling the App will not remove these.</li>
+  <li><strong>Documents, PDFs, signatures, annotations, and OCR text</strong> remain on your device until you delete them in the App or uninstall the App. Uninstalling Scanivo removes everything stored in app-private storage.</li>
+  <li><strong>Text notes</strong> saved from the Text Scanner are written to <code>Android/data/com.srtech.scanivo/files/text_notes/</code>. Uninstalling the App removes this folder.</li>
+  <li><strong>Files you exported</strong> to public folders (e.g. <em>Documents/Scanivo</em>, <em>Pictures/Scanivo</em>, or <em>Downloads/Scanivo</em>) remain on your device until you delete them with a file manager — uninstalling the App will not remove these.</li>
   <li><strong>AdMob data</strong> is retained by Google according to their policies.</li>
+  <li><strong>Subscription / Lifetime entitlement</strong> is retained by Google in your Google account until you cancel and the subscription expires (or, for Lifetime, indefinitely).</li>
 </ul>
 
-<h2 id="security">7. Security</h2>
+<h2 id="security">8. Security</h2>
 <p>Scanivo stores documents in app-private storage, which is sandboxed by Android so other apps cannot read them. The optional Locker further restricts access to selected files behind a PIN and biometric authentication.</p>
 <p>No method of transmission or storage is 100% secure. We follow industry-standard practices, but you remain responsible for the security of your device (lock screen, OS updates, etc.).</p>
 
-<h2 id="children">8. Children's privacy</h2>
+<h2 id="children">9. Children's privacy</h2>
 <p>Scanivo is intended for general audiences. The App does not knowingly collect personal information from children under 13 (or the equivalent minimum age in your jurisdiction). If you believe a child has provided information to us, please contact us and we will take appropriate action.</p>
 <p>The App displays Google AdMob ads. If your account is configured for child-directed treatment in Play Store, ad serving is automatically adjusted by Google.</p>
 
-<h2 id="rights">9. Your rights (GDPR / CCPA / similar)</h2>
+<h2 id="rights">10. Your rights (GDPR / CCPA / similar)</h2>
 <p>Depending on your jurisdiction, you may have rights to:</p>
 <ul>
   <li>Access, correct, or delete the personal information held about you.</li>
@@ -203,10 +241,10 @@
 </ul>
 <p>Because the App does not maintain accounts or upload your scans, requests to delete personal data can usually be satisfied by uninstalling the App or clearing it from <em>Settings → Apps → Scanivo → Storage → Clear data</em>.</p>
 
-<h2 id="changes">10. Changes to this policy</h2>
+<h2 id="changes">11. Changes to this policy</h2>
 <p>We may update this policy from time to time. The "Last updated" date at the top of this page reflects the latest revision. Material changes will be communicated via the Google Play listing or an in-app notice. Continued use of the App after a change means you accept the revised policy.</p>
 
-<h2 id="contact">11. Contact us</h2>
+<h2 id="contact">12. Contact us</h2>
 <p>If you have any questions, requests, or complaints regarding this Privacy Policy or your data:</p>
 <ul>
   <li><strong>Email:</strong> <a href="srtech.app20@gmail.com">srtech.app20@gmail.com</a></li>
